@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>title</name>
+    <events>
+        <event-block sid="526636143262110">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="871775445604041" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="559616084909206">
+                    <conditions>
+                        <condition id="-32" name="Is on platform" sid="191296413562527" type="System">
+                            <param id="0" name="Platform">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Login" sid="845653330792442" type="Authentication" />
+                        <action id="-9" name="Destroy" sid="431221404808776" type="exitbutton" />
+                        <action id="-9" name="Destroy" sid="424238156004531" type="exittext" />
+                    </actions>
+                </event-block>
+                <event-block sid="247442424684687">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="259618533674469" type="System">
+                            <param id="0" name="Variable">intro</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="821400607965581">
+            <conditions>
+                <condition id="6" name="На объекте щелкнули" sid="570401640522683" type="Mouse">
+                    <param id="0" name="Кнопка мыши">0</param>
+                    <param id="1" name="Тип клика">0</param>
+                    <param id="2" name="Объект щелкнут">startbutton</param>
+                </condition>
+                <condition id="4" name="В прикосании с объектом" sid="961365207799050" type="Touch">
+                    <param id="0" name="Объект">startbutton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="410892624932022" type="System">
+                    <param id="0" name="Layout">level 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="222506825133343">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="994743733195840" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="853195365909549" type="arrow">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="371752705480453">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="569394773566056" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="400090957525029" type="arrow">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-3" name="Set position" sid="125299926539468" type="arrow">
+                    <param id="0" name="X">142</param>
+                    <param id="1" name="Y">132</param>
+                </action>
+                <action id="4" name="Установить анимацию" sid="500718642784693" type="arrow">
+                    <param id="0" name="Анимация">&quot;normal&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block any="1" sid="355670926440947">
+                    <conditions>
+                        <condition id="0" name="Клавиша нажата" sid="674418142228254" type="Keyboard">
+                            <param id="0" name="Клавиша">38</param>
+                        </condition>
+                        <condition id="6" name="Кнопка нажата" sid="357532842225283" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">12</param>
+                        </condition>
+                        <condition id="0" name="Клавиша нажата" sid="809455182210746" type="Keyboard">
+                            <param id="0" name="Клавиша">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="472275489743432" type="arrow">
+                            <param id="0" name="Instance variable">marker</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="266194794153866">
+                    <conditions>
+                        <condition id="6" name="Кнопка нажата" sid="261921959291246" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">0</param>
+                        </condition>
+                        <condition id="0" name="Клавиша нажата" sid="266016951255781" type="Keyboard">
+                            <param id="0" name="Клавиша">90</param>
+                        </condition>
+                        <condition id="6" name="На объекте щелкнули" sid="342227829775874" type="Mouse">
+                            <param id="0" name="Кнопка мыши">0</param>
+                            <param id="1" name="Тип клика">0</param>
+                            <param id="2" name="Объект щелкнут">startbutton</param>
+                        </condition>
+                        <condition id="0" name="Клавиша нажата" sid="589635987540878" type="Keyboard">
+                            <param id="0" name="Клавиша">32</param>
+                        </condition>
+                        <condition id="6" name="Кнопка нажата" sid="327768418323041" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="848331706126536" type="System">
+                            <param id="0" name="Layout">level 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="301109916479848">
+                    <conditions>
+                        <condition id="0" name="Клавиша нажата" sid="399799308343477" type="Keyboard">
+                            <param id="0" name="Клавиша">40</param>
+                        </condition>
+                        <condition id="6" name="Кнопка нажата" sid="349469037631278" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">13</param>
+                        </condition>
+                        <condition id="0" name="Клавиша нажата" sid="100499763336552" type="Keyboard">
+                            <param id="0" name="Клавиша">83</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="131138889267028" type="arrow">
+                            <param id="0" name="Instance variable">marker</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="874505360187674">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="452737197851418" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="422347890926831" type="arrow">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-3" name="Set position" sid="841012570323731" type="arrow">
+                    <param id="0" name="X">142</param>
+                    <param id="1" name="Y">155</param>
+                </action>
+                <action id="4" name="Установить анимацию" sid="549866973200744" type="arrow">
+                    <param id="0" name="Анимация">&quot;normal&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block any="1" sid="808358665930616">
+                    <conditions>
+                        <condition id="0" name="Клавиша нажата" sid="620609477748380" type="Keyboard">
+                            <param id="0" name="Клавиша">40</param>
+                        </condition>
+                        <condition id="6" name="Кнопка нажата" sid="590105968874286" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">13</param>
+                        </condition>
+                        <condition id="0" name="Клавиша нажата" sid="490868546976958" type="Keyboard">
+                            <param id="0" name="Клавиша">83</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="438350096927594" type="arrow">
+                            <param id="0" name="Instance variable">marker</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="823299935896856">
+                    <conditions>
+                        <condition id="0" name="Клавиша нажата" sid="110124135424008" type="Keyboard">
+                            <param id="0" name="Клавиша">38</param>
+                        </condition>
+                        <condition id="6" name="Кнопка нажата" sid="810944067813787" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">12</param>
+                        </condition>
+                        <condition id="0" name="Клавиша нажата" sid="237994479981558" type="Keyboard">
+                            <param id="0" name="Клавиша">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="832550382176145" type="arrow">
+                            <param id="0" name="Instance variable">marker</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="357353200139495">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="184785111493067" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="458445055661765" type="arrow">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-3" name="Set position" sid="301346208275011" type="arrow">
+                    <param id="0" name="X">142</param>
+                    <param id="1" name="Y">176</param>
+                </action>
+                <action id="4" name="Установить анимацию" sid="479965963857780" type="arrow">
+                    <param id="0" name="Анимация">&quot;normal&quot;</param>
+                    <param id="1" name="Из">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block any="1" sid="265065297885588">
+                    <conditions>
+                        <condition id="6" name="Кнопка нажата" sid="378394380011626" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">0</param>
+                        </condition>
+                        <condition id="0" name="Клавиша нажата" sid="373871794668641" type="Keyboard">
+                            <param id="0" name="Клавиша">90</param>
+                        </condition>
+                        <condition id="6" name="На объекте щелкнули" sid="219646348262339" type="Mouse">
+                            <param id="0" name="Кнопка мыши">0</param>
+                            <param id="1" name="Тип клика">0</param>
+                            <param id="2" name="Объект щелкнут">exitbutton</param>
+                        </condition>
+                        <condition id="0" name="Клавиша нажата" sid="473904829437575" type="Keyboard">
+                            <param id="0" name="Клавиша">32</param>
+                        </condition>
+                        <condition id="6" name="Кнопка нажата" sid="584133731771921" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="829928275780007" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="458710601580299">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Закрыть" sid="608717367234393" type="Browser" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="332284371642294">
+                    <conditions>
+                        <condition id="0" name="Клавиша нажата" sid="373256759871954" type="Keyboard">
+                            <param id="0" name="Клавиша">38</param>
+                        </condition>
+                        <condition id="6" name="Кнопка нажата" sid="663269628166052" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">12</param>
+                        </condition>
+                        <condition id="0" name="Клавиша нажата" sid="734295062282236" type="Keyboard">
+                            <param id="0" name="Клавиша">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="527713782787975" type="arrow">
+                            <param id="0" name="Instance variable">marker</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="267961563649169">
+                    <conditions>
+                        <condition id="0" name="Клавиша нажата" sid="897729390178614" type="Keyboard">
+                            <param id="0" name="Клавиша">40</param>
+                        </condition>
+                        <condition id="6" name="Кнопка нажата" sid="726160605653803" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">13</param>
+                        </condition>
+                        <condition id="0" name="Клавиша нажата" sid="671834220554035" type="Keyboard">
+                            <param id="0" name="Клавиша">83</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="293802936974229" type="arrow">
+                            <param id="0" name="Instance variable">marker</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="461187652670847">
+            <conditions>
+                <condition id="7" name="Курсор над объектом" sid="559890582653165" type="Mouse">
+                    <param id="0" name="Объект">startbutton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="620668040130919" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="441126975378872">
+            <conditions>
+                <condition id="7" name="Курсор над объектом" sid="236709160290167" type="Mouse">
+                    <param id="0" name="Объект">levelselectbutton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="958177197556971" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="683438887409209">
+            <conditions>
+                <condition id="7" name="Курсор над объектом" sid="769781070897996" type="Mouse">
+                    <param id="0" name="Объект">exitbutton</param>
+                </condition>
+                <condition id="-32" inverted="1" name="Is on platform" sid="859791326209618" type="System">
+                    <param id="0" name="Platform">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="114544244218940" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="864320976294973">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="795649067546973" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="428255017074654" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="833662614002417">
+            <conditions>
+                <condition id="-32" name="Is on platform" sid="421766892590394" type="System">
+                    <param id="0" name="Platform">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="942669487859819" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="349351658416498" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="691987913252475">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="279514198496253" type="arrow">
+                    <param id="0" name="Instance variable">marker</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="584048370208936">
+                    <conditions>
+                        <condition id="-32" name="Is on platform" sid="399268800187774" type="System">
+                            <param id="0" name="Platform">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="805194614962226" type="arrow">
+                            <param id="0" name="Instance variable">marker</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="804257213347798">
+                    <conditions>
+                        <condition id="-32" name="Is on platform" sid="763707971776002" type="System">
+                            <param id="0" name="Platform">10</param>
+                        </condition>
+                        <condition id="-32" name="Is on platform" sid="968982591652300" type="System">
+                            <param id="0" name="Platform">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="844827331463901" type="arrow">
+                            <param id="0" name="Instance variable">marker</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

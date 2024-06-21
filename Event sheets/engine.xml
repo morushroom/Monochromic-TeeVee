@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>engine</name>
+    <events>
+        <variable constant="0" name="levelnow" sid="109550429391800" static="0" type="number">0</variable>
+        <variable constant="0" name="levelsUnlocked" sid="572676673356700" static="0" type="number">1</variable>
+        <variable constant="0" name="gamepad" sid="551753472418259" static="0" type="number">0</variable>
+        <variable constant="0" name="keyboard" sid="897764568905599" static="0" type="number">1</variable>
+        <variable constant="0" name="mobile" sid="273993021545476" static="0" type="number">0</variable>
+        <variable constant="0" name="intro" sid="513255818685676" static="0" type="number">0</variable>
+        <event-block sid="156635588946630">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="640008234254111" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Add cheat code" sid="285672700074374" type="CheatCode">
+                    <param id="0" name="Alias">&quot;debug mode&quot;</param>
+                    <param id="1" name="Sequence">&quot;d e b u g&quot;</param>
+                </action>
+                <action behavior="Платформа" id="5" name="Установить гравитацию" sid="261571227224775" type="player">
+                    <param id="0" name="Гравитация">1150</param>
+                </action>
+                <action id="-10" name="Set value" sid="130051622005838" type="player">
+                    <param id="0" name="Instance variable">Flipped</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-3" name="Create object" sid="236238598861542" type="System">
+                    <param id="0" name="Object to create">player</param>
+                    <param id="1" name="Layer">3</param>
+                    <param id="2" name="X">spawn.X</param>
+                    <param id="3" name="Y">spawn.Y</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="578721340530546" type="player">
+                    <param id="0" name="Object">player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="312561432686636" title="playermovement">
+            <sub-events>
+                <event-group description="" sid="850898647543297" title="keybutton">
+                    <sub-events>
+                        <event-block sid="942398195122367">
+                            <conditions>
+                                <condition id="1" name="Перекрывается другим объектом" sid="329841912729218" type="door">
+                                    <param id="0" name="Объект">player</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="349015277743778">
+                                    <conditions>
+                                        <condition id="6" name="Кнопка нажата" sid="507393090069740" type="Gamepad">
+                                            <param id="0" name="Геймпад">0</param>
+                                            <param id="1" name="Кнопка">13</param>
+                                        </condition>
+                                        <condition id="0" name="Клавиша нажата" sid="909379319917282" type="Keyboard">
+                                            <param id="0" name="Клавиша">40</param>
+                                        </condition>
+                                        <condition id="0" name="Клавиша нажата" sid="534566365090521" type="Keyboard">
+                                            <param id="0" name="Клавиша">83</param>
+                                        </condition>
+                                        <condition id="4" name="В прикосании с объектом" sid="248122736557318" type="Touch">
+                                            <param id="0" name="Объект">downbutton</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Установить анимацию" sid="337031664296443" type="door">
+                                            <param id="0" name="Анимация">&quot;open&quot;</param>
+                                            <param id="1" name="Из">1</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="702371703241808" type="player">
+                                            <param id="0" name="X">door.X</param>
+                                            <param id="1" name="Y">door.Y</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="376760591510549" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="791089625353458" type="player">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action behavior="Платформа" id="0" name="Задать игнорирование ввода" sid="154208012222784" type="player">
+                                            <param id="0" name="Ввод">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="861715619102929" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="124688699701965">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-2" name="Go to layout" sid="462267286334002" type="System">
+                                                    <param id="0" name="Layout">level 2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="107760718653695">
+                            <conditions>
+                                <condition id="6" name="Кнопка нажата" sid="472726844040163" type="Gamepad">
+                                    <param id="0" name="Геймпад">0</param>
+                                    <param id="1" name="Кнопка">13</param>
+                                </condition>
+                                <condition id="0" name="Клавиша нажата" sid="307392650779363" type="Keyboard">
+                                    <param id="0" name="Клавиша">40</param>
+                                </condition>
+                                <condition id="0" name="Клавиша нажата" sid="454130373983233" type="Keyboard">
+                                    <param id="0" name="Клавиша">83</param>
+                                </condition>
+                                <condition id="4" name="В прикосании с объектом" sid="694439409563085" type="Touch">
+                                    <param id="0" name="Объект">downbutton</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Установить анимацию" sid="443840212837830" type="downbutton">
+                                    <param id="0" name="Анимация">&quot;pressed&quot;</param>
+                                    <param id="1" name="Из">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="186634670203924" title="physics">
+                    <sub-events>
+                        <event-group description="" sid="234147622737898" title="le flips">
+                            <sub-events>
+                                <event-block sid="351040610823757">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="795703509626106" type="player">
+                                            <param id="0" name="Instance variable">Flipped</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Платформа" id="5" name="Установить гравитацию" sid="432512255888056" type="player">
+                                            <param id="0" name="Гравитация">1150</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="757986946280751" type="player">
+                                            <param id="0" name="Height">16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="585453398837734">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="179279071039090" type="player">
+                                            <param id="0" name="Instance variable">Flipped</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Платформа" id="5" name="Установить гравитацию" sid="564615999267120" type="player">
+                                            <param id="0" name="Гравитация">-1150</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="938000830734422" type="player">
+                                            <param id="0" name="Height">-16</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-block any="1" sid="946415350006066">
+                            <conditions>
+                                <condition id="0" name="В столкновении с другим объектом" sid="884469879076013" type="player">
+                                    <param id="0" name="Объект">magnetup</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="631874337346246" type="player">
+                                    <param id="0" name="Instance variable">Flipped</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="913845625893704">
+                            <conditions>
+                                <condition id="0" name="В столкновении с другим объектом" sid="241150105532089" type="player">
+                                    <param id="0" name="Объект">magnetdown</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="853131188469387" type="player">
+                                    <param id="0" name="Instance variable">Flipped</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block any="1" sid="328608071564798">
+                    <conditions>
+                        <condition id="2" name="Клавиша нажата" sid="275472683545878" type="Keyboard">
+                            <param id="0" name="Клавиша">39</param>
+                        </condition>
+                        <condition id="3" name="Кнопка нажата" sid="944607937837109" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">15</param>
+                        </condition>
+                        <condition id="2" name="Клавиша нажата" sid="137162083787827" type="Keyboard">
+                            <param id="0" name="Клавиша">68</param>
+                        </condition>
+                        <condition id="4" name="В прикосании с объектом" sid="398535229963140" type="Touch">
+                            <param id="0" name="Объект">rightbutton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Платформа" id="7" name="Установить управление" sid="983016044184719" type="player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="4" name="Установить анимацию" sid="313216314141774" type="rightbutton">
+                            <param id="0" name="Анимация">&quot;pressed&quot;</param>
+                            <param id="1" name="Из">1</param>
+                        </action>
+                        <action id="7" name="Установить отражение" sid="287427229177673" type="player">
+                            <param id="0" name="Состояние">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="488521815987568">
+                    <conditions>
+                        <condition id="2" name="Клавиша нажата" sid="616336915371741" type="Keyboard">
+                            <param id="0" name="Клавиша">37</param>
+                        </condition>
+                        <condition id="3" name="Кнопка нажата" sid="804222385654802" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">14</param>
+                        </condition>
+                        <condition id="2" name="Клавиша нажата" sid="953708671563993" type="Keyboard">
+                            <param id="0" name="Клавиша">65</param>
+                        </condition>
+                        <condition id="4" name="В прикосании с объектом" sid="822618670502454" type="Touch">
+                            <param id="0" name="Объект">leftbutton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Платформа" id="7" name="Установить управление" sid="880765219866365" type="player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="4" name="Установить анимацию" sid="111033784525492" type="leftbutton">
+                            <param id="0" name="Анимация">&quot;pressed&quot;</param>
+                            <param id="1" name="Из">1</param>
+                        </action>
+                        <action id="7" name="Установить отражение" sid="655113253704381" type="player">
+                            <param id="0" name="Состояние">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="183367751404445">
+                    <conditions>
+                        <condition id="2" name="Клавиша нажата" sid="393633357664870" type="Keyboard">
+                            <param id="0" name="Клавиша">90</param>
+                        </condition>
+                        <condition id="3" name="Кнопка нажата" sid="710621887882808" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">1</param>
+                        </condition>
+                        <condition id="3" name="Кнопка нажата" sid="633384789056411" type="Gamepad">
+                            <param id="0" name="Геймпад">0</param>
+                            <param id="1" name="Кнопка">0</param>
+                        </condition>
+                        <condition id="2" name="Клавиша нажата" sid="786393460688678" type="Keyboard">
+                            <param id="0" name="Клавиша">32</param>
+                        </condition>
+                        <condition id="4" name="В прикосании с объектом" sid="599385747527665" type="Touch">
+                            <param id="0" name="Объект">zbutton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Платформа" id="7" name="Установить управление" sid="449469371463627" type="player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="4" name="Установить анимацию" sid="226803479828909" type="zbutton">
+                            <param id="0" name="Анимация">&quot;pressed&quot;</param>
+                            <param id="1" name="Из">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="865350166598901">
+                    <conditions>
+                        <condition id="4" inverted="1" name="В прикосании с объектом" sid="771057843549896" type="Touch">
+                            <param id="0" name="Объект">leftbutton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Установить анимацию" sid="934501683840663" type="leftbutton">
+                            <param id="0" name="Анимация">&quot;normal&quot;</param>
+                            <param id="1" name="Из">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="813925387358659">
+                    <conditions>
+                        <condition id="4" inverted="1" name="В прикосании с объектом" sid="588797747388893" type="Touch">
+                            <param id="0" name="Объект">rightbutton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Установить анимацию" sid="846973037505911" type="rightbutton">
+                            <param id="0" name="Анимация">&quot;normal&quot;</param>
+                            <param id="1" name="Из">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="320106676453852">
+                    <conditions>
+                        <condition id="4" inverted="1" name="В прикосании с объектом" sid="699620984914373" type="Touch">
+                            <param id="0" name="Объект">zbutton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Установить анимацию" sid="342457655466695" type="zbutton">
+                            <param id="0" name="Анимация">&quot;normal&quot;</param>
+                            <param id="1" name="Из">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="265915458495950">
+                    <conditions>
+                        <condition id="4" inverted="1" name="В прикосании с объектом" sid="310425814962951" type="Touch">
+                            <param id="0" name="Объект">downbutton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Установить анимацию" sid="383664097498634" type="downbutton">
+                            <param id="0" name="Анимация">&quot;normal&quot;</param>
+                            <param id="1" name="Из">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="604330236918236">
+            <conditions>
+                <condition id="4" name="Is alias" sid="302543276906876" type="CheatCode">
+                    <param id="0" name="Alias">&quot;debug mode&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="118732644297519" type="System">
+                    <param id="0" name="Layout">testlevel</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="803874867398382">
+            <conditions>
+                <condition id="8" name="Любая кнопка нажата" sid="978379439671687" type="Gamepad">
+                    <param id="0" name="Геймпад">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="915542595588971" type="System">
+                    <param id="0" name="Variable">gamepad</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="291490406352694" type="System">
+                    <param id="0" name="Variable">gamepad</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="913476505959979" type="System">
+                    <param id="0" name="Variable">keyboard</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="703610283587659" type="System">
+                    <param id="0" name="Variable">mobile</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="109346015607421">
+            <conditions>
+                <condition id="1" name="При любом нажатии клавиши" sid="377062410877497" type="Keyboard" />
+                <condition id="-14" name="Compare variable" sid="146419602957086" type="System">
+                    <param id="0" name="Variable">keyboard</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="480239194069764" type="System">
+                    <param id="0" name="Variable">keyboard</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="723037294103992" type="System">
+                    <param id="0" name="Variable">mobile</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="927244293972331" type="System">
+                    <param id="0" name="Variable">gamepad</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="110172226180132">
+            <conditions>
+                <condition id="-20" name="Is on mobile device" sid="105059520244949" type="System" />
+                <condition id="-14" name="Compare variable" sid="659767777326649" type="System">
+                    <param id="0" name="Variable">mobile</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="356058301110927" type="System">
+                    <param id="0" name="Variable">mobile</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="394125418738700" type="System">
+                    <param id="0" name="Variable">keyboard</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="920474158728775" type="System">
+                    <param id="0" name="Variable">gamepad</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="360863033837571" title="achievements">
+            <sub-events>
+                <event-block sid="406217298188359">
+                    <conditions>
+                        <condition id="4" name="Is alias" sid="566253942981415" type="CheatCode">
+                            <param id="0" name="Alias">&quot;debug mode&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Unlock" sid="737561327996099" type="Medal">
+                            <param id="0" name="ID">66011</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="457025237760142" title="multiplatform">
+            <sub-events>
+                <event-block sid="168648849736004">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="539429922203855" type="System">
+                            <param id="0" name="Variable">mobile</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="900226270098983" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set canvas size" sid="784538530045393" type="System">
+                            <param id="0" name="Width">320</param>
+                            <param id="1" name="Height">320</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="638742610160842" type="System">
+                            <param id="0" name="Object to create">leftbutton</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">48</param>
+                            <param id="3" name="Y">280</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="308512130299273" type="System">
+                            <param id="0" name="Object to create">rightbutton</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">112</param>
+                            <param id="3" name="Y">280</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="941635215808442" type="System">
+                            <param id="0" name="Object to create">zbutton</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">272</param>
+                            <param id="3" name="Y">280</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="120438441466620" type="System">
+                            <param id="0" name="Object to create">downbutton</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">224</param>
+                            <param id="3" name="Y">294</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="912082639283665">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="710572502994427" type="rightbutton" />
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="759790852943573" type="rightbutton">
+                            <param id="0" name="Width">64</param>
+                            <param id="1" name="Height">64</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="145430476116434">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="772986044044300" type="leftbutton" />
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="420142368632797" type="leftbutton">
+                            <param id="0" name="Width">64</param>
+                            <param id="1" name="Height">64</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="138042895924635">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="836287576607849" type="zbutton" />
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="323378659492107" type="zbutton">
+                            <param id="0" name="Width">64</param>
+                            <param id="1" name="Height">64</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="607830147113699">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="715265549129043" type="downbutton" />
+                    </conditions>
+                    <actions>
+                        <action id="-7" name="Set size" sid="372670975340271" type="zbutton">
+                            <param id="0" name="Width">32</param>
+                            <param id="1" name="Height">32</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="300155869085829">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="314638657851740" type="System">
+                            <param id="0" name="Variable">keyboard</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="591090699216835" type="System">
+                            <param id="0" name="Variable">gamepad</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set canvas size" sid="365852777758659" type="System">
+                            <param id="0" name="Width">320</param>
+                            <param id="1" name="Height">240</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="112085725975366" type="leftbutton" />
+                        <action id="-9" name="Destroy" sid="100073400681656" type="rightbutton" />
+                        <action id="-9" name="Destroy" sid="349967835673866" type="zbutton" />
+                        <action id="-9" name="Destroy" sid="100043221423898" type="downbutton" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="576556094437220" title="levels">
+            <sub-events>
+                <event-block sid="162229954495674">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="701087651586303" type="System">
+                            <param id="0" name="Variable">levelnow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="724169474224137" type="System">
+                            <param id="0" name="Layout">level 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="523409132715000">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="741450449569468" type="System">
+                            <param id="0" name="Variable">levelnow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="907242325694198" type="System">
+                            <param id="0" name="Layout">level 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="773340066978352">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="303276696742259" type="System">
+                            <param id="0" name="Variable">levelnow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="542747640896942" type="System">
+                            <param id="0" name="Layout">level 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="415191529817108">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="527513695610891" type="System">
+                            <param id="0" name="Variable">levelnow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="660866328418579" type="System">
+                            <param id="0" name="Layout">level 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="826069803778377">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="107410851370696" type="System">
+                            <param id="0" name="Variable">levelnow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="804153596428026" type="System">
+                            <param id="0" name="Layout">level 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="207555440019905">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="555429287407968" type="System">
+                            <param id="0" name="Variable">levelnow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="574061707098653" type="System">
+                            <param id="0" name="Layout">level 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="158191139970934">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="306259080547491" type="System">
+                            <param id="0" name="Variable">levelnow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="515690538882117" type="System">
+                            <param id="0" name="Layout">level 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="346394966958443">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="255378459034834" type="System">
+                            <param id="0" name="Variable">levelnow</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">levelsUnlocked</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="452130832823068" type="System">
+                            <param id="0" name="Variable">levelsUnlocked</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="832872198640497">
+            <conditions>
+                <condition id="0" name="В столкновении с другим объектом" sid="567834727873923" type="player">
+                    <param id="0" name="Объект">owtheedge</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="834400678525744" type="player" />
+            </actions>
+        </event-block>
+        <event-block sid="871953945397210">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="580710162653630" type="player" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="804135828215849" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="365282731230300">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Create object" sid="289621012334366" type="System">
+                            <param id="0" name="Object to create">player</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="X">spawn.X</param>
+                            <param id="3" name="Y">spawn.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

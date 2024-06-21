@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">testlevel</layout>
+        <layout order="2">titlescreen</layout>
+        <layout order="4">level 1</layout>
+        <layout order="5">level 2</layout>
+        <event-sheet active="1" order="1">engine</event-sheet>
+        <event-sheet order="3">title</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Свойства проекта" />
+        <property expanded="1" name="Размер окна" />
+        <property expanded="1" name="Настройки конфигурации" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/background/" />
+        <folder expanded="1" path="animation-folder/player/" />
+        <folder expanded="1" path="animation-folder/door/" />
+        <folder expanded="1" path="animation-folder/startbutton/" />
+        <folder expanded="1" path="animation-folder/leftbutton/" />
+        <folder expanded="1" path="animation-folder/rightbutton/" />
+        <folder expanded="1" path="animation-folder/zbutton/" />
+        <folder expanded="1" path="animation-folder/tv/" />
+        <folder expanded="1" path="animation-folder/levelselectbutton/" />
+        <folder expanded="1" path="animation-folder/exitbutton/" />
+        <folder expanded="1" path="animation-folder/arrow/" />
+        <folder expanded="1" path="animation-folder/spawn/" />
+        <folder expanded="1" path="animation-folder/owtheedge/" />
+        <folder expanded="1" path="animation-folder/downbutton/" />
+    </folders-expanded>
+</c2uistate>
